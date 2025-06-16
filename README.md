@@ -5,6 +5,11 @@ Krista Longnecker, 14 June 2025
 ## Python
 16 June 2025
 Already clear that I will need to run this on the HPC, so set up over there to run the scripts.
+Log into Poseidon ssh klongnecker@poseidon.whoi.edu
+On Poseidon:
+git clone https://github.com/redbluewater/BATSwithCMAP.git
+
+
 
 14 June 2025
 Using the pycmap package because that seems to be more current than the R package (and looks like other authors wrote the R package).
