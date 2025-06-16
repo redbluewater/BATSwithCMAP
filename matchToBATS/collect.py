@@ -37,9 +37,10 @@ def main():
     makedir(DATA_DIR)
     cyanos = cyano_datasets()
     for dataset in cyanos:
-        print("\n********************************")
-        print("Downloading ", dataset, " ...")
-        print("********************************\n")
+        #KL turning these off until I figure out how to get this out of the main directory
+        #print("\n********************************")
+        #print("Downloading ", dataset, " ...")
+        #print("********************************\n")
         data = retrieve(api, dataset, DEPTH1, DEPTH2)
         data.to_csv(f"{DATA_DIR}{dataset[0]}.csv", index=False)
 
