@@ -13,4 +13,4 @@ CONDA_BASE=$(conda info --base)
 source $CONDA_BASE/etc/profile.d/conda.sh
 conda activate CMAPenv
 
-python $dir/collect.py
+python $dir/collect.py >> output_dir/file.txt
