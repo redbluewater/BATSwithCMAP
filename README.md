@@ -1,5 +1,5 @@
 # tryCMAP
-Spinning up on CMAP for BIOS-SCOPE data
+Spinning up on CMAP for BIOS-SCOPE data\
 Krista Longnecker, 14 June 2025
 
 ## Python
