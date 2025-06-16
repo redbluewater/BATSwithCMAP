@@ -3,6 +3,10 @@ Spinning up on CMAP for BIOS-SCOPE data\
 Krista Longnecker, 14 June 2025
 
 ## Python
+16 June 2025
+Already clear that I will need to run this on the HPC, so set up over there to run the scripts.
+
+14 June 2025
 Using the pycmap package because that seems to be more current than the R package (and looks like other authors wrote the R package).
 
 Start with ``tryingCMAP_v1.ipynb`` to learn how to setup the queries and make some basic figures, for example: 
