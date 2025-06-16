@@ -4,6 +4,7 @@
 #SBATCH --time=01:00:00
 #SBATCH --ntasks-per-node=1
 #SBATCH --job-name=collect
+#SBATCH --output /dev/null
 
 dir="$HOME/BATSwithCMAP/matchToBATS"
 cd "$dir"
