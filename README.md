@@ -23,6 +23,13 @@ Make a new environment:
 ``conda env create --file CMAPenv.yml``\
 ``conda activate CMAPenv.yml``
 
+(put the config.py file with the SSH key into the .gitignore and manually swap that over)
+
+Then run the scripts as follows:\
+``sbatch ./step1_collect.slurm``\
+``sbatch ./step2_colocalize.slurm``
+``sbatch ./step3_compile.slurm``
+
 
 ### 14 June 2025
 Using the pycmap package because that seems to be more current than the R package (and looks like other authors wrote the R package).
