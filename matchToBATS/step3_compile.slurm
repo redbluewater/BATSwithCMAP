@@ -3,7 +3,7 @@
 #SBATCH --mem=100gb
 #SBATCH --time=05:00:00
 #SBATCH --ntasks-per-node=1
-#SBATCH --job-name=colocalize
+#SBATCH --job-name=compile
 
 dir="$HOME/BATSwithCMAP/matchToBATS"
 cd "$dir"
