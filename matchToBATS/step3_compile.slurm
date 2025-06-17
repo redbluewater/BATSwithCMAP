@@ -10,6 +10,9 @@
 dir="$HOME/BATSwithCMAP/matchToBATS"
 cd "$dir"
 
+echo `date`
+echo This is job $SLURM_JOB_ID
+
 # Setup Environment
 CONDA_BASE=$(conda info --base)
 source $CONDA_BASE/etc/profile.d/conda.sh
