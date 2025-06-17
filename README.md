@@ -13,22 +13,32 @@ Already clear that I will need to run this on the HPC, so set up over there to r
 Log into Poseidon ``ssh klongnecker@poseidon.whoi.edu``\
 ``git clone`` (GitHUB CLI version worked)\
 ``module load anaconda/5.1``\
-``conda activate untargKL4``
+``conda activate untargKL4`` # Need some form of conda environment to use conda (I don't think I need mamba)
 
 But need to install pycmap : ``pip install pycmap``
 
 Make a new environment:
 ``conda env export > CMAPenv.yml``\
-(edit yml file to have the name RforMStools6 at the top and bottom, I used nano on the HPC)\
+(edit yml file to have the name CMAPenv at the top and bottom, I used nano on the HPC)\
 ``conda env create --file CMAPenv.yml``\
 ``conda activate CMAPenv.yml``
 
-(put the config.py file with the SSH key into the .gitignore and manually swap that over)
+(put the config.py file with the API key into the .gitignore and manually swap that over)
 
 Then run the scripts as follows:\
 ``sbatch ./step1_collect.slurm``\
 ``sbatch ./step2_colocalize.slurm``
 ``sbatch ./step3_compile.slurm``
+
+Can also chain the jobs since step1 is fast, but step2 is not, but they need different parameters at the top of the slurm script:
+* Start step1, and write down the batch job number (e.g., 14107426)
+* Start step2, but with a dependancy:  sbatch --dependency=afterany:14107426 step2.slurm
+Or, even better, only continue if step 1 worked:
+* Start step2, but with a dependancy:  sbatch --dependency=afterok:14107426 step2.slurm
+
+This site is useful https://groups.oist.jp/scs/advanced-slurm
+
+
 
 
 ### 14 June 2025
