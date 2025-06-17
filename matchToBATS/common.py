@@ -75,48 +75,48 @@ def environmental_datasets():
     latitude [deg], longitude [deg], and depth [m] tolerances, respectively. 
     """
     envs = {
-           # "tblSST_AVHRR_OI_NRT": {
-           #                         "variables": ["sst"],
-           #                         "tolerances": [1, 0.25, 0.25, 5],
-           #                         "hasDepth": False,
-           #                         "isClimatology": False
-           #                         },
+           "tblSST_AVHRR_OI_NRT": {
+                                    "variables": ["sst"],
+                                    "tolerances": [1, 0.25, 0.25, 5],
+                                    "hasDepth": False,
+                                    "isClimatology": False
+                                    },
            "tblCHL_REP": {
                           "variables": ["chl"],
                           "tolerances": [4, 0.25, 0.25, 5],
                           "hasDepth": False,
                           "isClimatology": False
                           },
-           # "tblSSS_NRT": {
-           #                "variables": ["sss"],
-           #                "tolerances": [1, 0.25, 0.25, 5],
-           #                "hasDepth": False,
-           #                "isClimatology": False
-           #                },
-           # "tblModis_PAR": {
-           #                  "variables": ["PAR"],
-           #                  "tolerances": [1, 0.25, 0.25, 5],
-           #                  "hasDepth": False,
-           #                  "isClimatology": False
-           #                  },
+           "tblSSS_NRT": {
+                           "variables": ["sss"],
+                           "tolerances": [1, 0.25, 0.25, 5],
+                           "hasDepth": False,
+                           "isClimatology": False
+                           },
+           "tblModis_PAR": {
+                             "variables": ["PAR"],
+                             "tolerances": [1, 0.25, 0.25, 5],
+                             "hasDepth": False,
+                             "isClimatology": False
+                             },
            "tblAltimetry_REP": {
                                 "variables": ["sla", "adt", "ugosa", "vgosa"],
                                 "tolerances": [1, 0.25, 0.25, 5],
                                 "hasDepth": False,
                                 "isClimatology": True #try this, false fails
                                 },
-           # "tblPisces_NRT": {
-           #                   "variables": ["NO3", "PO4", "Fe", "O2", "Si", "PP"],
-           #                   "tolerances": [4, 0.5, 0.5, 5],
-           #                   "hasDepth": True,
-           #                   "isClimatology": False
-           #                   },
-           # "tblWOA_Climatology": {
-           #                        "variables": ["density_WOA_clim", "salinity_WOA_clim", "nitrate_WOA_clim", "phosphate_WOA_clim", "silicate_WOA_clim", "oxygen_WOA_clim"],
-           #                        "tolerances": [1, 0.75, 0.75, 5],
-           #                        "hasDepth": True,
-           #                        "isClimatology": True
-           #                        }
+           "tblPisces_NRT": {
+                              "variables": ["NO3", "PO4", "Fe", "O2", "Si", "PP"],
+                              "tolerances": [4, 0.5, 0.5, 5],
+                              "hasDepth": True,
+                              "isClimatology": False
+                              },
+            "tblWOA_Climatology": {
+                                   "variables": ["density_WOA_clim", "salinity_WOA_clim", "nitrate_WOA_clim", "phosphate_WOA_clim", "silicate_WOA_clim", "oxygen_WOA_clim"],
+                                   "tolerances": [1, 0.75, 0.75, 5],
+                                   "hasDepth": True,
+                                   "isClimatology": True
+                                   }
            }
     return envs
 

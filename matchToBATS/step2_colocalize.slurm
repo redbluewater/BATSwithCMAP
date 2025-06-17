@@ -4,7 +4,8 @@
 #SBATCH --time=03:00:00
 #SBATCH --ntasks-per-node=1
 #SBATCH --job-name=coloc
-#SBATCH --output /dev/null
+#SBATCH --output=/vortexfs1/home/klongnecker/BATSwithCMAP/matchToBATS/output_dir/step2_colocalize.out
+#SBATCH --error=/vortexfs1/home/klongnecker/BATSwithCMAP/matchToBATS/output_dir/step2_colocalize.error
 
 dir="$HOME/BATSwithCMAP/matchToBATS"
 cd "$dir"
