@@ -4,6 +4,8 @@ Author: Mohammad Dehghani Ashkezari <mdehghan@uw.edu>
 Date: 2020-08-19
 
 Function: Colocalize cyanobacteria observations with a given list of environmental variables hosted by the CMAP database.
+KL modifying for BATS, 18 June 2025
+This is step 2
 """
 
 
@@ -25,6 +27,7 @@ from dateutil.parser import parse
 def cyano_csv_files(cyanoDir):
     """
     Returns a list of path to csv files that hold observations of cyanobacteria.
+    KL note: leave name for now, though I am working on TOC/DOC data
     """
     return glob.glob(f"{cyanoDir}*.csv")
 
@@ -108,6 +111,7 @@ def match(df, api, envs, cyanoFile, rowCount):
     for table, env in envs.items():
         #KL turn off next line because it's make a rather large output file and I will not browse through it 6/18/2025
         #print(f"{rowIndex} / {rowCount-1}\n\t{datetime.datetime.now()}: Colocalizing {table} with {cyanoFile} ...")
+        print("Colocalizing {table} with {cyanoFile} ...")
         query = construc_query(table, env, t, lat, lon, depth)
         matchedEnv = api.query(query)
         if len(matchedEnv)>0:
@@ -118,7 +122,7 @@ def match(df, api, envs, cyanoFile, rowCount):
 
 def main():
     """
-    Iterates through the list of cyano datasets and colocalizes them with the specified environmentl variables.
+    Iterates through the list of datasets and colocalizes them with the specified environmental variables.
     Colocalized datasets are stored in the "COLOCALIZED_DIR" as csv files.
     """
     def saveColocalizedCSV(df):

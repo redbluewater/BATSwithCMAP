@@ -5,6 +5,7 @@ Date: 2020-08-19
 
 Function: Retrieve Cyanobacteria measurements in CMAP and store them on local disk.
 #KL setting up for use with BATS data 6/18/2025
+This is : step1_collect
 """
 
 
