@@ -4,14 +4,16 @@ Author: Mohammad Dehghani Ashkezari <mdehghan@uw.edu>
 Date: 2020-08-19
 
 Function: Retrieve Cyanobacteria measurements in CMAP and store them on local disk.
+#KL setting up for use with BATS data 6/18/2025
 """
-
 
 
 import pycmap
 from settings import DEPTH1, DEPTH2, DATA_DIR
-from config.config import API_KEY
-from common import makedir, cyano_datasets
+import sys
+sys.path.append("../config")
+from config import API_KEY
+from common import makedir, doc_datasets
 
 
 def retrieve(api, dataset, depth1, depth2):
@@ -35,11 +37,12 @@ def main():
     """
     api = pycmap.API(token=API_KEY)
     makedir(DATA_DIR)
-    cyanos = cyano_datasets()
-    for dataset in cyanos:
-        print("\n********************************")
+    docdata = doc_datasets()
+    for dataset in docdata:
+        #KL trimming this down to make the output smaller
+        #print("\n********************************")
         print("Downloading ", dataset, " ...")
-        print("********************************\n")
+        #print("********************************\n")
         data = retrieve(api, dataset, DEPTH1, DEPTH2)
         data.to_csv(f"{DATA_DIR}{dataset[0]}.csv", index=False)
 

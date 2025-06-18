@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# KL modifying for use with CMAP, 18 June 2025
 # first, we submit the original job, and capture the output. 
 # Slurm prints "submitted batch job <jobid>" when we submit a job.
 # We store that output in jobstring using $( ... )

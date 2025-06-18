@@ -4,12 +4,12 @@ Author: Mohammad Dehghani Ashkezari <mdehghan@uw.edu>
 Date: 2020-08-19
 
 Function: Holds popular functions that are invoked across the project. 
+KL updating to use with BATS data
+18 June 2025
 """
 
-
-
 import os, sys
-from settings import PROC, SYNC, PICO
+from settings import DOC
 import numpy as np
 import pandas as pd
 from colorama import Fore, Back, Style, init
@@ -36,36 +36,21 @@ def makedir(directory):
         os.makedirs(directory)
     return
 
-
-def cyano_datasets():
+def doc_datasets():
     """
-    Compiles a list of Cyanobacteria datasets.
+    Gather up what little DOC data there are, start with Atlantic Ocean
     Each element is a tuple representing a dataset where the first element is the table name 
     and the second element is a list of field names to be retrieved. 
+    For now, making this list manually as doing this with command line would be a pain since each dataset has its own naming.
+    Do DOC/TOC and something else so I get a comparison
     """
-    cyanos = []
-    cyanos.append(("tblSeaFlow_v1_5", ["cruise", "abundance_prochloro", "abundance_synecho", "abundance_picoeuk"]))
-    cyanos.append(("tblFlombaum", ["prochlorococcus_abundance_flombaum", "synechococcus_abundance_flombaum"]))
-    # cyanos.append(("tblGlobal_PicoPhytoPlankton", ["prochlorococcus_abundance", "synechococcus_abundance", "picoeukaryote_abundance"]))
-    # cyanos.append(("tblJR19980514_AMT06_Flow_Cytometry", ["prochlorococcus_abundance_P701A90Z_Zubkov", "synechococcus_abundance_P700A90Z_Zubkov", "picoeukaryotic_abundance_PYEUA00A_Zubkov"]))
-    # cyanos.append(("tblJR20030512_AMT12_Flow_Cytometry", ["prochlorococcus_abundance_P701A90Z_Zubkov", "synechococcus_abundance_P700A90Z_Zubkov", "picoeukaryotic_abundance_PYEUA00A_Zubkov"]))
-    # cyanos.append(("tblJR20030910_AMT13_Flow_Cytometry", ["prochlorococcus_abundance_P701A90Z_Zubkov", "synechococcus_abundance_P700A90Z_Zubkov", "picoeukaryotic_abundance_PYEUA00A_Zubkov"]))
-    # cyanos.append(("tblJR20040428_AMT14_Flow_Cytometry", ["prochlorococcus_abundance_P701A90Z_Zubkov", "synechococcus_abundance_P700A90Z_Zubkov", "picoeukaryotic_abundance_PYEUA00A_Zubkov"]))
-    # cyanos.append(("tblD284_AMT15_Flow_Cytometry", ["prochlorococcus_abundance_P701A90Z_Zubkov", "synechococcus_abundance_P700A90Z_Zubkov"]))
-    # cyanos.append(("tblD294_AMT16_Flow_Cytometry", ["prochlorococcus_abundance_P701A90Z_Tarran", "synechococcus_abundance_P700A90Z_Tarran", "picoeukaryotic_abundance_PYEUA00A_Tarran"]))
-    # cyanos.append(("tblD299_AMT17_Flow_Cytometry", ["prochlorococcus_abundance_P701A90Z_Zubkov", "synechococcus_abundance_P700A90Z_Zubkov", "picoeukaryotic_abundance_PYEUA00A_Zubkov"]))
-    # cyanos.append(("tblJR20081003_AMT18_flow_cytometry", ["prochlorococcus_abundance_P701A90Z_Tarran", "synechococcus_abundance_P700A90Z_Tarran", "picoeukaryotic_abundance_PYEUA00A_Tarran"]))
-    # cyanos.append(("tblJC039_AMT19_flow_cytometry", ["prochlorococcus_abundance_P701A90Z_Tarran", "synechococcus_abundance_P700A90Z_Tarran", "picoeukaryotic_abundance_PYEUA00A_Tarran"]))
-    # cyanos.append(("tblJC053_AMT20_flow_cytometry", ["prochlorococcus_abundance_P701A90Z_Tarran", "synechococcus_abundance_P700A90Z_Tarran", "picoeukaryotic_abundance_PYEUA00A_Tarran"]))
-    # cyanos.append(("tblD371_AMT21_flow_cytometry", ["prochlorococcus_abundance_P701A90Z_Tarran", "synechococcus_abundance_P700A90Z_Tarran", "picoeukaryotic_abundance_PYEUA00A_Tarran"]))
-    # cyanos.append(("tblJC079_AMT22_flow_cytometry", ["prochlorococcus_abundance_P701A90Z_Tarran", "synechococcus_abundance_P700A90Z_Tarran", "picoeukaryotic_abundance_PYEUA00A_Tarran"]))
-    # cyanos.append(("tblJR20131005_AMT23_flow_cytometry", ["prochlorococcus_abundance_P701A90Z_Tarran", "synechococcus_abundance_P700A90Z_Tarran", "picoeukaryotic_abundance_PYEUA00A_Tarran"]))
-    # cyanos.append(("tblJR20140922_AMT24_flow_cytometry", ["prochlorococcus_abundance_P701A90Z_Tarran", "synechococcus_abundance_P700A90Z_Tarran", "picoeukaryotic_abundance_PYEUA00A_Tarran"]))
-    # cyanos.append(("tblJR15001_AMT25_flow_cytometry", ["prochlorococcus_abundance_P701A90Z_Tarran", "synechococcus_abundance_P700A90Z_Tarran", "picoeukaryotic_abundance_PYEUA00A_Tarran"]))
-    # cyanos.append(("tblDY110_AMT29_flow_cytometry", ["prochlorococcus_abundance_P701A90Z_Tarran", "synechococcus_abundance_P700A90Z_Tarran", "picoeukaryotic_abundance_PYEUA00A_Tarran"]))
-    return cyanos
-
-
+    doc = []
+    doc.append(("tblBATS_Bottle",["cruise_ID","TOC","phosphate"]))
+    doc.append(("tblGLODAP",["cruise_expocode","toc","phosphate"]))
+    doc.append(("tblBATS_Bottle_Validation",["cruise_ID","TOC","phosphate"]))
+    doc.append(("tblGeotraces_Seawater_IDP2021v2",["cruise_id","DOC_D_CONC_BOTTLE","PHOSPHATE_D_CONC_BOTTLE"]))
+    return doc
+    
 def environmental_datasets():
     """
     Compiles a dict of environmental vaiables to be colocalized with cyanobacteria measurements.
@@ -73,38 +58,15 @@ def environmental_datasets():
     containing the variables names, tolerance parameters, and two flags indicating if the dataset has 'depth' column, 
     and if the dataset represents a climatology product, repectively. The tolerance parametrs specify the temporal [days], 
     latitude [deg], longitude [deg], and depth [m] tolerances, respectively. 
+    KL trim down the list because just checking things out right now
     """
     envs = {
-           "tblSST_AVHRR_OI_NRT": {
-                                    "variables": ["sst"],
-                                    "tolerances": [1, 0.25, 0.25, 5],
-                                    "hasDepth": False,
-                                    "isClimatology": False
-                                    },
            "tblCHL_REP": {
                           "variables": ["chl"],
                           "tolerances": [4, 0.25, 0.25, 5],
                           "hasDepth": False,
                           "isClimatology": False
                           },
-           "tblSSS_NRT": {
-                           "variables": ["sss"],
-                           "tolerances": [1, 0.25, 0.25, 5],
-                           "hasDepth": False,
-                           "isClimatology": False
-                           },
-           "tblModis_PAR": {
-                             "variables": ["PAR"],
-                             "tolerances": [1, 0.25, 0.25, 5],
-                             "hasDepth": False,
-                             "isClimatology": False
-                             },
-           "tblAltimetry_REP": {
-                                "variables": ["sla", "adt", "ugosa", "vgosa"],
-                                "tolerances": [1, 0.25, 0.25, 5],
-                                "hasDepth": False,
-                                "isClimatology": True #try this, false fails
-                                },
            "tblPisces_NRT": {
                               "variables": ["NO3", "PO4", "Fe", "O2", "Si", "PP"],
                               "tolerances": [4, 0.5, 0.5, 5],
