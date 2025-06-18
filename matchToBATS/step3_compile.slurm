@@ -4,8 +4,11 @@
 #SBATCH --time=0:30:00
 #SBATCH --ntasks-per-node=1
 #SBATCH --job-name=compile
-#SBATCH --output=/vortexfs1/home/klongnecker/BATSwithCMAP/matchToBATS/output_dir/step3_compile.out
-#SBATCH --error=/vortexfs1/home/klongnecker/BATSwithCMAP/matchToBATS/output_dir/step3_compile.error
+#SBATCH --mail-type=END
+#SBATCH --mail-user=klongnecker@whoi.edu
+#SBATCH --output=/vortexfs1/home/klongnecker/BATSwithCMAP/matchToBATS/output_dir/step3.out
+#SBATCH --error=/vortexfs1/home/klongnecker/BATSwithCMAP/matchToBATS/output_dir/step3.error
+
 
 dir="$HOME/BATSwithCMAP/matchToBATS"
 cd "$dir"

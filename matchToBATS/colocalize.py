@@ -11,7 +11,9 @@ Function: Colocalize cyanobacteria observations with a given list of environment
 import os, glob
 import concurrent.futures
 import pycmap
-from config.config import API_KEY
+import sys
+sys.path.append("../config")
+from config import API_KEY
 from settings import DATA_DIR, COLOCALIZED_DIR
 from common import halt, makedir, environmental_datasets
 import pandas as pd

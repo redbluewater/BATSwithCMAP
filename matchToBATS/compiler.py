@@ -10,7 +10,9 @@ Function: Compiles all of the colocalized cyano datasets into a single csv file.
 
 import os, sys, glob
 import pycmap
-from config.config import API_KEY
+import sys
+sys.path.append("../config")
+from config import API_KEY
 from settings import PROC, SYNC, PICO, COLOCALIZED_DIR, COMPILED_DIR
 from common import halt, makedir, env_vars
 import pandas as pd
