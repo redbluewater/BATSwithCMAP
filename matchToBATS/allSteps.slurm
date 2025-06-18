@@ -11,7 +11,11 @@ jobstring=$(sbatch step1_collect.slurm)
 
 jobid=${jobstring##* }
 
-# Now submit j2.slurm as a dependant job to j1:
+# Now submit step2.slurm as a dependant job to step1:
+# sbatch --dependency=afterok:${jobid} step2_colocalize.slurm
+jobstring=$(sbatch --dependency=afterok:${jobid} step2_colocalize.slurm)
+jobid=${jobstring##* }
 
-sbatch --dependency=afterok:${jobid} step2_colocalize.slurm
+# Finally, assume all goes OK, setup step3
+sbatch --dependency=afterok:${jobid} step3_compile.slurm
 

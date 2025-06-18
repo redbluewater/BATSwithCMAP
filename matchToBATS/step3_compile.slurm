@@ -4,8 +4,8 @@
 #SBATCH --time=05:00:00
 #SBATCH --ntasks-per-node=1
 #SBATCH --job-name=compile
-#SBATCH --output=/vortexfs1/home/klongnecker/BATSwithCMAP/matchToBATS/output_dir/step2_compile.out
-#SBATCH --error=/vortexfs1/home/klongnecker/BATSwithCMAP/matchToBATS/output_dir/step2_compile.error
+#SBATCH --output=/vortexfs1/home/klongnecker/BATSwithCMAP/matchToBATS/output_dir/step3_compile.out
+#SBATCH --error=/vortexfs1/home/klongnecker/BATSwithCMAP/matchToBATS/output_dir/step3_compile.error
 
 dir="$HOME/BATSwithCMAP/matchToBATS"
 cd "$dir"
@@ -18,4 +18,4 @@ CONDA_BASE=$(conda info --base)
 source $CONDA_BASE/etc/profile.d/conda.sh
 conda activate CMAPenv
 
-python $dir/compile.py 
+python $dir/compiler.py 
