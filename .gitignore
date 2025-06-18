@@ -1,5 +1,10 @@
+/config/config.py
+
+#
+/phytoplanktonExample/data/
 /matchToBATS/data/
-/matchToBATS/config/config.py
-/vortexfs1/home/klongnecker/BATSwithCMAP/matchToBATS/config/config.py
+
+#
+/vortexfs1/home/klongnecker/BATSwithCMAP/phytoplanktonExample/data
 /vortexfs1/home/klongnecker/BATSwithCMAP/matchToBATS/data/
 

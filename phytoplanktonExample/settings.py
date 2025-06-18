@@ -6,7 +6,7 @@ Date: 2020-08-23
 
 Function: Holds cross-project settings and constants.
 """
-# KL updating to use with BATS data
+
 
 
 
