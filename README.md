@@ -3,7 +3,7 @@ Using CMAP (Python version) for BIOS-SCOPE data\
 Krista Longnecker, 14 June 2025
 
 ## Updates as I go along, most recent at the top
-### 16 June 2025
+### 16/17 June 2025
 Already clear that I will need to run this on the HPC, so set up over there to run the scripts.
 
 #### On desktop:
@@ -36,9 +36,11 @@ Can also chain the jobs since step1 is fast, but step2 is not, but they need dif
 Or, even better, only continue if step 1 worked:
 * Start step2, but with a dependancy:  sbatch --dependency=afterok:14107426 step2.slurm
 
-This site is useful https://groups.oist.jp/scs/advanced-slurm
+Set up one slurm script (``allSteps.slurm``) that runs the three slurm scripts, with dependencies, so I can start one script that has the details for each task.
 
-
+#### To do
+- [ ] consolidate API keys and config.py so I am not tracking multiple
+- [ ] Make sure the API keys are in .gitignore
 
 
 ### 14 June 2025
@@ -49,3 +51,6 @@ Start with ``tryingCMAP_v1.ipynb`` to learn how to setup the queries and make so
 
 Next up will be to gather data from different available datasets and match things up.
 
+### Useful commands
+seff to see efficiency of slurm script
+This site is useful https://groups.oist.jp/scs/advanced-slurm
