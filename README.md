@@ -3,6 +3,13 @@ Using CMAP (Python version) for BIOS-SCOPE data\
 Krista Longnecker, 14 June 2025
 
 ## Updates as I go along, most recent at the top
+### 18 June 2025
+Found a few datasets in the vicinity of BATS with TOC/DOC data and then using phosphate as a second variable. Running this in matchToBATS (and put the phytoplankton example into ``phytoplanktonExample`` as I was able to get that to work from beginning to end)
+
+#### To do
+- [ ] figure out if all data have to go through CMAP, or can I merge offline data with the compiled dataset from CMAP?
+- [ ] is it worth setting this up to run in parallel on the HPC? It is threaded in Python, but that's not taking advantage of the HPC
+
 ### 16/17/18 June 2025
 Already clear that I will need to run this on the HPC, so set up over there to run the scripts.
 
@@ -48,8 +55,8 @@ On my local computer, I used the Anaconda Power Shell to run this ```ssh -L 8888
 Open a browser window and enter: ```localhost:8888``` and enter the password set above.
 
 #### To do
-- [ ] consolidate API keys and config.py so I am not tracking multiple
-- [ ] Make sure the API keys are in .gitignore
+- [x] consolidate API keys and config.py so I am not tracking multiple
+- [x] Make sure the API keys are in .gitignore
 
 
 ### 14 June 2025
