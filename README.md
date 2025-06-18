@@ -3,7 +3,7 @@ Using CMAP (Python version) for BIOS-SCOPE data\
 Krista Longnecker, 14 June 2025
 
 ## Updates as I go along, most recent at the top
-### 16/17 June 2025
+### 16/17/18 June 2025
 Already clear that I will need to run this on the HPC, so set up over there to run the scripts.
 
 #### On desktop:
@@ -11,9 +11,8 @@ Already clear that I will need to run this on the HPC, so set up over there to r
 
 #### For Poseidon:
 Log into Poseidon ``ssh klongnecker@poseidon.whoi.edu``\
-``git clone`` (GitHUB CLI version worked)\
 ``module load anaconda/5.1``\
-``conda activate untargKL4`` # Need some form of conda environment to use conda (I don't think I need mamba)
+``conda activate untargKL4`` # Need some form of conda environment to use conda (I don't think I need mamba)\
 
 But need to install pycmap : ``pip install pycmap``
 
@@ -23,7 +22,11 @@ Make a new environment:
 ``conda env create --file CMAPenv.yml``\
 ``conda activate CMAPenv.yml``
 
+``git clone git@github.com:redbluewater/BATSwithCMAP.git``
+
 (put the config.py file with the API key into the .gitignore and manually swap that over)
+
+Make sure to have output_dir as a folder *before* running the scripts (haven't figured out how to do that in the first script yet).
 
 Then run the scripts as follows:\
 ``sbatch ./step1_collect.slurm``\
@@ -37,6 +40,12 @@ Or, even better, only continue if step 1 worked:
 * Start step2, but with a dependancy:  sbatch --dependency=afterok:14107426 step2.slurm
 
 Set up one slurm script (``allSteps.slurm``) that runs the three slurm scripts, with dependencies, so I can start one script that has the details for each task.
+
+Set up for Jupyter notebook bounced through HPC to localhost
+```sbatch launch_jupyter.slurm```\
+Once the script is run, use this to find the jobid: ```squeue -u klongnecker``` and then use that information to get the Poseidon node (e.g., 'pn083').\
+On my local computer, I used the Anaconda Power Shell to run this ```ssh -L 8888:<port number>:8888 klongnecker@poseidon.whoi.edu```\
+Open a browser window and enter: ```localhost:8888``` and enter the password set above.
 
 #### To do
 - [ ] consolidate API keys and config.py so I am not tracking multiple
