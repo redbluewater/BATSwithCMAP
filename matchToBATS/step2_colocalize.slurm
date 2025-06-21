@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --partition=compute
+#SBATCH --partition=medmem
 #SBATCH --mem=20gb
-#SBATCH --time==48:00:00
+#SBATCH --time==4-00:00:00
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
 #SBATCH --job-name=coloc
