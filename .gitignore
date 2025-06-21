@@ -2,9 +2,13 @@
 
 #
 /phytoplanktonExample/data/
+/phytoplanktonExample/output_dir/
 /matchToBATS/data/
+/matchToBATS/output_dir/
 
 #
-/vortexfs1/home/klongnecker/BATSwithCMAP/phytoplanktonExample/data
+/vortexfs1/home/klongnecker/BATSwithCMAP/phytoplanktonExample/data/
+/vortexfs1/home/klongnecker/BATSwithCMAP/phytoplanktonExample/output_dir/
 /vortexfs1/home/klongnecker/BATSwithCMAP/matchToBATS/data/
+/vortexfs1/home/klongnecker/BATSwithCMAP/matchToBATS/output_dir/
 
