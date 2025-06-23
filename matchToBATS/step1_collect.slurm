@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --partition=compute
-#SBATCH --mem=500mb
+#SBATCH --mem=2gb
 #SBATCH --time=00:10:00
 #SBATCH --ntasks-per-node=1
 #SBATCH --job-name=collect
