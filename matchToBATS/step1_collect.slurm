@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --partition=compute
-#SBATCH --mem=10gb
-#SBATCH --time=00:30:00
+#SBATCH --mem=500mb
+#SBATCH --time=00:10:00
 #SBATCH --ntasks-per-node=1
 #SBATCH --job-name=collect
 #SBATCH --output=/vortexfs1/home/klongnecker/BATSwithCMAP/matchToBATS/output_dir/step1.out

@@ -2,6 +2,7 @@
 #SBATCH --partition=medmem
 #SBATCH --mem=20gb
 #SBATCH --ntasks=1
+#SBATCH --qos=unlim
 #SBATCH --cpus-per-task=32
 #SBATCH --job-name=coloc
 #SBATCH --output=/vortexfs1/home/klongnecker/BATSwithCMAP/matchToBATS/output_dir/step2.out
