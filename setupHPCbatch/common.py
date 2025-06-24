@@ -4,7 +4,7 @@ Author: Mohammad Dehghani Ashkezari <mdehghan@uw.edu>
 Date: 2020-08-19
 
 Function: Holds popular functions that are invoked across the project. 
-KL updating to use with BATS data
+KL updating to use with HPC
 18 June 2025
 """
 
@@ -46,6 +46,7 @@ def doc_datasets():
     """
     doc = []
     doc.append(("tblBATS_Bottle",["cruise_ID","TOC","phosphate"]))
+    doc.append(("tblGLODAP",["cruise_expocode","toc","phosphate"]))
     doc.append(("tblBATS_Bottle_Validation",["cruise_ID","TOC","phosphate"]))
     doc.append(("tblGeotraces_Seawater_IDP2021v2",["cruise_id","DOC_D_CONC_BOTTLE","PHOSPHATE_D_CONC_BOTTLE"]))
     return doc
@@ -66,6 +67,12 @@ def environmental_datasets():
                           "hasDepth": False,
                           "isClimatology": False
                           },
+           "tblPisces_NRT": {
+                              "variables": ["NO3", "PO4", "Fe", "O2", "Si", "PP"],
+                              "tolerances": [4, 0.5, 0.5, 5],
+                              "hasDepth": True,
+                              "isClimatology": False
+                              },
             "tblWOA_Climatology": {
                                    "variables": ["density_WOA_clim", "salinity_WOA_clim", "nitrate_WOA_clim", "phosphate_WOA_clim", "silicate_WOA_clim", "oxygen_WOA_clim"],
                                    "tolerances": [1, 0.75, 0.75, 5],

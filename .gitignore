@@ -5,6 +5,8 @@
 /phytoplanktonExample/output_dir/
 /matchToBATS/data/
 /matchToBATS/output_dir/
+/setupHPCbatch/data/
+/setupHPCbatch/output_dir/
 
 #
 /vortexfs1/home/klongnecker/BATSwithCMAP/phytoplanktonExample/data/
