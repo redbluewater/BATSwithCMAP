@@ -47,7 +47,7 @@ def doc_datasets():
     doc = []
     doc.append(("tblBATS_Bottle",["cruise_ID","TOC","phosphate"]))
     doc.append(("tblBATS_Bottle_Validation",["cruise_ID","TOC","phosphate"]))
-    doc.append(("tblGeotraces_Seawater_IDP2021v2",["cruise_id","DOC_D_CONC_BOTTLE","PHOSPHATE_D_CONC_BOTTLE"]))
+    #doc.append(("tblGeotraces_Seawater_IDP2021v2",["cruise_id","DOC_D_CONC_BOTTLE","PHOSPHATE_D_CONC_BOTTLE"]))
     return doc
     
 def environmental_datasets():
