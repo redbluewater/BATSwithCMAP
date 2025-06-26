@@ -46,8 +46,8 @@ def cyano_datasets():
     cyanos = []
     cyanos.append(("tblSeaFlow_v1_5", ["cruise", "abundance_prochloro", "abundance_synecho", "abundance_picoeuk"]))
     cyanos.append(("tblFlombaum", ["prochlorococcus_abundance_flombaum", "synechococcus_abundance_flombaum"]))
-    # cyanos.append(("tblGlobal_PicoPhytoPlankton", ["prochlorococcus_abundance", "synechococcus_abundance", "picoeukaryote_abundance"]))
-    # cyanos.append(("tblJR19980514_AMT06_Flow_Cytometry", ["prochlorococcus_abundance_P701A90Z_Zubkov", "synechococcus_abundance_P700A90Z_Zubkov", "picoeukaryotic_abundance_PYEUA00A_Zubkov"]))
+    cyanos.append(("tblGlobal_PicoPhytoPlankton", ["prochlorococcus_abundance", "synechococcus_abundance", "picoeukaryote_abundance"]))
+    cyanos.append(("tblJR19980514_AMT06_Flow_Cytometry", ["prochlorococcus_abundance_P701A90Z_Zubkov", "synechococcus_abundance_P700A90Z_Zubkov", "picoeukaryotic_abundance_PYEUA00A_Zubkov"]))
     # cyanos.append(("tblJR20030512_AMT12_Flow_Cytometry", ["prochlorococcus_abundance_P701A90Z_Zubkov", "synechococcus_abundance_P700A90Z_Zubkov", "picoeukaryotic_abundance_PYEUA00A_Zubkov"]))
     # cyanos.append(("tblJR20030910_AMT13_Flow_Cytometry", ["prochlorococcus_abundance_P701A90Z_Zubkov", "synechococcus_abundance_P700A90Z_Zubkov", "picoeukaryotic_abundance_PYEUA00A_Zubkov"]))
     # cyanos.append(("tblJR20040428_AMT14_Flow_Cytometry", ["prochlorococcus_abundance_P701A90Z_Zubkov", "synechococcus_abundance_P700A90Z_Zubkov", "picoeukaryotic_abundance_PYEUA00A_Zubkov"]))
