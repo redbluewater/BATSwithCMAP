@@ -6,6 +6,7 @@ Date: 2020-08-19
 Function: Holds popular functions that are invoked across the project. 
 KL updating to use with BATS data
 18 June 2025
+tblGLODAP.csv is causing code to stop indefinitely at a point
 """
 
 import os, sys
@@ -66,12 +67,6 @@ def environmental_datasets():
                           "hasDepth": False,
                           "isClimatology": False
                           },
-            "tblWOA_Climatology": {
-                                   "variables": ["density_WOA_clim", "salinity_WOA_clim", "nitrate_WOA_clim", "phosphate_WOA_clim", "silicate_WOA_clim", "oxygen_WOA_clim"],
-                                   "tolerances": [1, 0.75, 0.75, 5],
-                                   "hasDepth": True,
-                                   "isClimatology": True
-                                   }
            }
     return envs
 
