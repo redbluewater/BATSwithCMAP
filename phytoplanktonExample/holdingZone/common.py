@@ -99,11 +99,11 @@ def environmental_datasets():
                              "hasDepth": False,
                              "isClimatology": False
                              },
-           "tblAltimetry_REP_Signal": { #note new name
+           "tblAltimetry_REP": {
                                 "variables": ["sla", "adt", "ugosa", "vgosa"],
                                 "tolerances": [1, 0.25, 0.25, 5],
                                 "hasDepth": False,
-                                "isClimatology": False #try this, false fails
+                                "isClimatology": True #try this, false fails
                                 },
            "tblPisces_NRT": {
                               "variables": ["NO3", "PO4", "Fe", "O2", "Si", "PP"],
