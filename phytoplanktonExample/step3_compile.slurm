@@ -9,7 +9,7 @@
 #SBATCH --output=/vortexfs1/home/klongnecker/BATSwithCMAP/phytoplanktonExample/output_dir/step3.out
 #SBATCH --error=/vortexfs1/home/klongnecker/BATSwithCMAP/phytoplanktonExample/output_dir/step3.error
 
-dir="$HOME/BATSwithCMAP/matchToBATS"
+dir="$HOME/BATSwithCMAP/phytoplanktonExample"
 cd "$dir"
 
 echo `date`

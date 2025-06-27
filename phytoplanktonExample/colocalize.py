@@ -106,8 +106,8 @@ def match(df, api, envs, cyanoFile, rowCount):
     depth = 0
     if 'depth' in df.columns: depth = df.iloc[0]["depth"]
     for table, env in envs.items():
-        #KL turn off next line because it's make a rather large output file and I will not browse through it 6/18/2025
-        #print(f"{rowIndex} / {rowCount-1}\n\t{datetime.datetime.now()}: Colocalizing {table} with {cyanoFile} ...")
+        #turn off next line because it's make a rather large output file
+        print(f"{rowIndex} / {rowCount-1}\n\t{datetime.datetime.now()}: Colocalizing {table} with {cyanoFile} ...")
         query = construc_query(table, env, t, lat, lon, depth)
         matchedEnv = api.query(query)
         if len(matchedEnv)>0:
